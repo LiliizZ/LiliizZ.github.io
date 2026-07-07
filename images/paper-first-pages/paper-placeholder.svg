@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 263" width="200" height="263">
+  <rect width="200" height="263" fill="#ffffff"/>
+  <rect x="0" y="0" width="200" height="263" fill="none" stroke="#d6e8f8" stroke-width="2"/>
+  <rect x="22" y="24" width="156" height="13" fill="#172433"/>
+  <rect x="22" y="44" width="120" height="7" fill="#5f7082"/>
+  <g fill="#5f7082">
+    <rect x="22" y="70" width="156" height="4"/>
+    <rect x="22" y="80" width="156" height="4"/>
+    <rect x="22" y="90" width="140" height="4"/>
+    <rect x="22" y="100" width="156" height="4"/>
+    <rect x="22" y="110" width="110" height="4"/>
+    <rect x="22" y="126" width="156" height="4"/>
+    <rect x="22" y="136" width="156" height="4"/>
+    <rect x="22" y="146" width="130" height="4"/>
+    <rect x="22" y="162" width="156" height="4"/>
+    <rect x="22" y="172" width="156" height="4"/>
+    <rect x="22" y="182" width="90" height="4"/>
+    <rect x="22" y="198" width="156" height="4"/>
+    <rect x="22" y="208" width="156" height="4"/>
+    <rect x="22" y="218" width="120" height="4"/>
+  </g>
+  <text x="100" y="250" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#9aa8b6">paper thumbnail — replace me</text>
+</svg>

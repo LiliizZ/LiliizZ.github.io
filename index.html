@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lili Zhao</title>
+  <meta name="author" content="Lili Zhao">
+  <meta name="description" content="Lili Zhao — graduated from USTC in 2025, now at LongCat-Interaction working on post-training, agentic RL, and self-evolving agents.">
+  <!-- Apply saved/preferred theme before paint to avoid flash -->
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      var preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,650;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+  <!-- Favicon: an SVG square with your initials. Change the fill color / letters below. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232f6fa7'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23f3f9ff'%3ELZ%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Sticky top bar: your name on the left, dark-mode toggle on the right -->
+  <header class="site-header">
+    <nav class="topbar" aria-label="Primary">
+      <a class="site-name" href="#">Lili Zhao, Ph.D.</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="home-layout">
+      <!-- Left rail: portrait + a short career timeline -->
+      <aside class="profile-rail">
+        <img class="portrait" src="images/liliz.jpg" alt="Lili Zhao">
+
+        <div class="rail-content">
+          <div class="timeline" aria-label="Career timeline">
+            <div class="timeline-item">
+              <p><span>2025.11</span> Ph.D., USTC</p>
+            </div>
+            <div class="timeline-item">
+              <p><span>2025.12</span> LongCat-Interaction</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main column: bio + selected research -->
+      <div class="home-main">
+        <section class="hero-bio">
+          <p>
+            I received my Ph.D. from the University of Science and Technology of China (USTC) in November 2025.
+            My research interests include <strong>shortcut learning</strong>,
+            <strong>robustness and generalization</strong>, <strong>post-training</strong>,
+            <strong>reward hacking</strong>, and <strong>legal intelligence</strong>.
+          </p>
+
+          <p>
+            In December 2025, I joined the <strong>LongCat-Interaction</strong> team, where I work on
+            <strong>post-training</strong>, <strong>agentic reinforcement learning</strong>, and
+            <strong>self-evolving</strong> agents.
+            <strong>We are actively recruiting &#8212; feel free to reach out if you are interested in joining us!</strong>
+          </p>
+
+          <p class="ext-links">
+            <a href="mailto:liliz@mail.ustc.edu.cn">Email</a>
+            / <a href="https://scholar.google.com/citations?user=CJP_DQ4AAAAJ&hl=zh-CN">Google Scholar</a>
+            / <a href="https://github.com/LiliizZ">GitHub</a>
+          </p>
+        </section>
+
+        <!-- ============ SELECTED PUBLICATIONS ============ -->
+        <!-- Plain text list. Each <li class="paper-item"> is one paper.
+             - paper-year: the publication year (left column)
+             - paper-title: <a href> = the paper's link (arXiv / DOI / venue page)
+             - paper-meta: authors (bold your own name) + <span class="paper-venue">venue</span>
+             - paper-actions (optional): PDF / arXiv / Code / BibTeX links
+             Duplicate one <li> to add a paper; delete one to remove. -->
+        <section class="paper-deck" aria-labelledby="research-title">
+          <h2 id="research-title">Publications</h2>
+
+          <ol class="paper-list">
+
+            <li class="paper-item">
+              <div class="paper-year">2026</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://arxiv.org/abs/2604.17405">STRIDE: Strategic Iterative Decision-Making for Retrieval-Augmented Multi-Hop Question Answering</a></h3>
+                <p class="paper-meta">
+                  Wei Chen, <strong>Lili Zhao</strong>, Zhi Zheng, Huijun Hou, Tong Xu.
+                  <span class="paper-venue">SIGIR, 2026.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2025</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://openreview.net/forum?id=UVmeiLJbr4">Beneath the Surface: Exposing and Mitigating Surface Learning in Large Language Models</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Yang Wang, Wei Chen, Yu Yuan, Qi Liu, Dongjie Guo, Kai Han, Shijin Wang.
+                  <span class="paper-venue">Preprint, 2025.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2025</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://link.springer.com/article/10.1007/s11704-025-50448-3">MiMu: Mitigating Multiple Shortcut Learning Behavior of Transformers</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Qi Liu, Wei Chen, Liyi Chen, Ruijun Sun, Min Hou, Yang Wang, Shijin Wang, Pingping Ren, Jiafeng Zhou.
+                  <span class="paper-venue">Frontiers of Computer Science, 2025.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2025</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://openreview.net/forum?id=E36NHwe7Zc">Evaluating Large Language Models through Role-Guide and Self-Reflection: A Comparative Study</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Yang Wang, Qi Liu, Mengyun Wang, Wei Chen, Zhichao Sheng, Shijin Wang.
+                  <span class="paper-venue">ICLR, 2025.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2025</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://arxiv.org/abs/2508.05622">Simulating Human-like Learning Dynamics with LLM-Empowered Agents</a></h3>
+                <p class="paper-meta">
+                  Yu Yuan, <strong>Lili Zhao</strong>, Wei Chen, Guangting Zheng, Kai Zhang, Mengdi Zhang, Qi Liu.
+                  <span class="paper-venue">arXiv, 2025.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2025</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://aclanthology.org/2025.findings-emnlp.975/">Following Occam's Razor: Dynamic Combination of Structured Knowledge for Multi-Hop Question Answering using LLMs</a></h3>
+                <p class="paper-meta">
+                  Wei Chen, Zhi Zheng, <strong>Lili Zhao</strong>, Huijun Hou, Tong Xu.
+                  <span class="paper-venue">EMNLP, 2025.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2024</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://aclanthology.org/2024.emnlp-main.679/">Do LLMs Overcome Shortcut Learning? An Evaluation of Shortcut Challenges in Large Language Models</a></h3>
+                <p class="paper-meta">
+                  Yu Yuan, <strong>Lili Zhao</strong>, Kai Zhang, Guangting Zheng, Qi Liu.
+                  <span class="paper-venue">EMNLP, 2024.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2024</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3626772.3657729">CoMi: Correct and Mitigate Shortcut Learning Behavior in Deep Neural Networks</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Qi Liu, Linan Yue, Wei Chen, Liyi Chen, Ruijun Sun, Chao Song.
+                  <span class="paper-venue">SIGIR, 2024.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2024</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3626772.3657698">Event Grounded Criminal Court View Generation with Cooperative (Large) Language Models</a></h3>
+                <p class="paper-meta">
+                  Linan Yue, Qi Liu, <strong>Lili Zhao</strong>, Li Wang, Weibo Gao, Yanqing An.
+                  <span class="paper-venue">SIGIR, 2024.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2024</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://aclanthology.org/2024.findings-emnlp.180/">Double-Checker: Large Language Model as a Checker for Few-Shot Named Entity Recognition</a></h3>
+                <p class="paper-meta">
+                  Wei Chen, <strong>Lili Zhao</strong>, Zhi Zheng, Tong Xu, Yang Wang, Enhong Chen.
+                  <span class="paper-venue">EMNLP, 2024.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2023</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614908">HeProto: A Hierarchical Enhancing ProtoNet Based on Multi-Task Learning for Few-Shot Named Entity Recognition</a></h3>
+                <p class="paper-meta">
+                  Wei Chen, <strong>Lili Zhao</strong>, Pengfei Luo, Tong Xu, Yi Zheng, Enhong Chen.
+                  <span class="paper-venue">CIKM, 2023.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2023</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8850-1_46">Diagnosis then Aggregation: An Adaptive Ensemble Strategy for Keyphrase Extraction</a></h3>
+                <p class="paper-meta">
+                  Xin Jin, Qi Liu, Linan Yue, Ye Liu, <strong>Lili Zhao</strong>, Weibo Gao, Zheng Gong, Kai Zhang, Haoyang Bi.
+                  <span class="paper-venue">CICAI, 2023.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2022</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3511808.3557273">CPEE: Civil Case Judgment Prediction Centering on the Trial Mode of Essential Elements</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Linan Yue, Yanqing An, Yuren Zhang, Jun Yu, Qi Liu, Enhong Chen.
+                  <span class="paper-venue">CIKM, 2022.</span>
+                </p>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-year">2021</div>
+              <div class="paper-body">
+                <h3 class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-93046-2_60">Legal Judgment Prediction with Multiple Perspectives on Civil Cases</a></h3>
+                <p class="paper-meta">
+                  <strong>Lili Zhao</strong>, Linan Yue, Yanqing An, Ye Liu, Kai Zhang, Weidong He, Yanmin Chen, Senchao Yuan, Qi Liu.
+                  <span class="paper-venue">CICAI, 2021.</span>
+                </p>
+              </div>
+            </li>
+
+          </ol>
+
+          <p class="paper-footnote">
+            * Equal contribution. Full list on
+            <a href="https://scholar.google.com/citations?user=CJP_DQ4AAAAJ&hl=zh-CN">Google Scholar</a>.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lili Zhao &middot; USTC &middot; Updated July 2026</p>
+  </footer>
+
+  <script>
+    // Dark-mode toggle: flips data-theme on <html> and remembers it in localStorage.
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  </script>
+</body>
+</html>

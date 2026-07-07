@@ -1,0 +1,410 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   COLOR TOKENS — edit these to rebrand the whole site at once.
+   Light theme (default). */
+:root {
+  --bg: #f8fcff;          /* page background */
+  --surface: #ffffff;      /* card background */
+  --text: #172433;         /* main text */
+  --muted: #5f7082;        /* secondary text */
+  --soft: #d6e8f8;         /* borders, dividers, timeline line */
+  --link: #2f6fa7;         /* link color */
+  --link-hover: #1687c4;   /* link hover */
+  --accent: #6bbfe3;       /* card top stripe, timeline dots */
+  --accent-soft: #dff3ff;
+  --shadow: rgba(24, 78, 119, 0.18);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg: #101b27;
+  --surface: #162636;
+  --text: #e8f4ff;
+  --muted: #a9bed2;
+  --soft: #2b4358;
+  --link: #9bd5ff;
+  --link-hover: #73c8ef;
+  --accent: #6bbfe3;
+  --accent-soft: #16384b;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.18s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* ===== Sticky header with name + theme toggle ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--soft);
+  backdrop-filter: blur(12px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1020px, 100%);
+  margin: 0 auto;
+  padding: 17px 38px;
+}
+
+.site-name {
+  color: var(--text);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.36rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-name:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--soft) 55%, transparent);
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+}
+
+.icon-sun { display: none; }
+.icon-moon { display: block; }
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ===== Page shell + two-column layout (portrait rail | main) ===== */
+.page-shell {
+  width: min(1020px, 100%);
+  margin: 0 auto;
+  padding: 54px 38px 78px;
+}
+
+.home-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.profile-rail {
+  flex: 0 0 178px;
+}
+
+.portrait {
+  display: block;
+  width: 178px;
+  height: 224px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 5px;
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* ===== Career timeline under the portrait ===== */
+.timeline {
+  margin-top: 18px;
+  padding-left: 6px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding-left: 21px;
+  padding-bottom: 13px;
+}
+
+.timeline-item::before {
+  position: absolute;
+  top: 9px;
+  bottom: 0;
+  left: 5px;
+  width: 1px;
+  background: var(--soft);
+  content: "";
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item:last-child::before { display: none; }
+
+.timeline-item::after {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  content: "";
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.timeline-item span {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.home-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== Bio paragraphs ===== */
+.hero-bio p {
+  max-width: 760px;
+  margin: 0 0 15px;
+  font-size: 0.96rem;
+}
+
+.ext-links {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ext-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.ext-links a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* ===== Selected Research: plain text publication list ===== */
+.paper-deck {
+  margin-top: 36px;
+}
+
+.paper-deck h2 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* The list itself */
+.paper-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  max-width: 760px;
+}
+
+/* Each paper entry */
+.paper-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid color-mix(in srgb, var(--soft) 70%, transparent);
+}
+
+.paper-item:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--soft) 70%, transparent);
+}
+
+/* Year column */
+.paper-year {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  padding-top: 2px;
+}
+
+/* Body (title + meta + actions) */
+.paper-body {
+  min-width: 0;
+}
+
+/* Title */
+.paper-title {
+  display: block;
+  margin: 0;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+/* Make a leading link cover the title so the title is clickable */
+.paper-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.paper-title a:hover {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Authors + venue line */
+.paper-meta {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Highlight your own name in the author list */
+.paper-meta strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+/* Venue tag (italic, accent-tinted) */
+.paper-venue {
+  font-style: italic;
+  color: var(--link);
+}
+
+/* Optional small links after a paper (PDF / arXiv / code) */
+.paper-actions {
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.paper-actions a {
+  display: inline-block;
+  margin-right: 12px;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.paper-actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.paper-footnote {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  width: min(1020px, 100%);
+  margin: 0 auto;
+  padding: 26px 38px 34px;
+  border-top: 1px solid var(--soft);
+  color: var(--muted);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* ===== Responsive: stack portrait above text, 1 column ===== */
+@media (max-width: 760px) {
+  .topbar { padding: 14px 18px; }
+  .page-shell { padding: 34px 18px 58px; }
+
+  .home-layout {
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .profile-rail {
+    display: grid;
+    grid-template-columns: minmax(118px, 42%) 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 178px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    justify-self: center;
+  }
+
+  .timeline { margin-top: 2px; }
+
+  .hero-bio p {
+    font-size: 0.94rem;
+    overflow-wrap: break-word;
+  }
+
+  .paper-item {
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    padding: 13px 0;
+  }
+
+  .paper-title { font-size: 0.92rem; }
+  .paper-meta { font-size: 0.82rem; }
+}
+
+@media (max-width: 420px) {
+  .profile-rail {
+    grid-template-columns: 44% 1fr;
+    gap: 14px;
+  }
+  .timeline-item p { font-size: 0.72rem; }
+}

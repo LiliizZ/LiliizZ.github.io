@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 224" width="178" height="224">
+  <rect width="178" height="224" fill="#d6e8f8"/>
+  <rect x="0" y="0" width="178" height="224" fill="none" stroke="#6bbfe3" stroke-width="2"/>
+  <circle cx="89" cy="86" r="34" fill="#9bd5ff" opacity="0.7"/>
+  <path d="M40 200c0-30 22-52 49-52s49 22 49 52z" fill="#9bd5ff" opacity="0.7"/>
+  <text x="89" y="218" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#5f7082">portrait.jpg — replace me</text>
+</svg>
